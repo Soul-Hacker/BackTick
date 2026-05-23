@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Basic SEO Metadata -->
   <title>Backtick - Professional Clean Markdown IDE</title>
-  <meta name="description" content="A publishing-grade, 100% client-side Markdown IDE tailored for technical writers and engineers. Features real-time KaTeX math equations, a visual table generator, and obsidian templates.">
-  <meta name="keywords" content="markdown editor, markdown builder, katex editor, latex equation preview, visual table builder, technical writer editor, local markdown ide">
+  <meta name="description"
+    content="A publishing-grade, 100% client-side Markdown IDE tailored for technical writers and engineers. Features real-time KaTeX math equations, a visual table generator, and obsidian templates.">
+  <meta name="keywords"
+    content="markdown editor, markdown builder, katex editor, latex equation preview, visual table builder, technical writer editor, local markdown ide">
   <meta name="author" content="Backtick IDE">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="JXRqE8Z-scAIo0q8IL2l7eOm-8KQ5JsN9BkwgJgHAJU" />
-  <link rel="canonical" href="https://backtick-23gf.onrender.com/">
+  <meta name="google-site-verification" content="eWBmGiuWqCdiHdcayQbsexCjmR7zdQPLDwJ0WzORz0Q" />
+  <link rel="canonical" href="https://backtick-fe46a.web.app/" />
 
   <!-- Open Graph / Facebook Social Previews -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Backtick - Professional Clean Markdown IDE">
-  <meta property="og:description" content="A serverless, 100% client-side Markdown IDE with visual table builders and KaTeX equations for technical writers and engineers.">
+  <meta property="og:description"
+    content="A serverless, 100% client-side Markdown IDE with visual table builders and KaTeX equations for technical writers and engineers.">
   <meta property="og:url" content="https://backtick-23gf.onrender.com/">
   <meta property="og:site_name" content="Backtick">
 
   <!-- Twitter Social Previews -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Backtick - Professional Clean Markdown IDE">
-  <meta name="twitter:description" content="A publishing-grade, 100% client-side Markdown IDE with real-time KaTeX, table generators, and dark theme variables.">
+  <meta name="twitter:description"
+    content="A publishing-grade, 100% client-side Markdown IDE with real-time KaTeX, table generators, and dark theme variables.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="%230b0f19"/><rect x="1" y="1" width="30" height="30" rx="8" fill="none" stroke="%2310b981" stroke-width="1.5"/><path d="M18 10h4l-5 12h-4z" fill="%23ffffff"/></svg>'>
-  
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="%230b0f19"/><rect x="1" y="1" width="30" height="30" rx="8" fill="none" stroke="%2310b981" stroke-width="1.5"/><path d="M18 10h4l-5 12h-4z" fill="%23ffffff"/></svg>'>
+
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Custom Tailwind Config mapping theme parameters dynamically -->
   <script>
     tailwind.config = {
@@ -48,23 +55,25 @@
       }
     }
   </script>
-  
+
   <!-- KaTeX CSS for High-fidelity LaTeX Equations -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  
+
   <!-- Prism.js Tomorrow Night Theme for code highlighting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
-  
+
   <!-- Custom Dynamic Theme Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  
+
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="h-full flex flex-col antialiased select-none">
 
   <!-- TOP BAR (Unified Minimalist Header) -->
-  <header class="flex-none h-14 border-b app-header px-6 flex items-center justify-between z-20 transition-all duration-300">
+  <header
+    class="flex-none h-14 border-b app-header px-6 flex items-center justify-between z-20 transition-all duration-300">
     <div class="flex items-center space-x-3">
       <div class="h-8 w-8 rounded-lg bg-brand-500/10 flex items-center justify-center border border-brand-500/20">
         <i data-lucide="feather" class="text-brand-500 h-4.5 w-4.5"></i>
@@ -72,33 +81,41 @@
       <div>
         <div class="flex items-center space-x-2">
           <h1 class="text-sm font-bold tracking-tight app-text-heading">Backtick</h1>
-          <span class="text-[9px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider">PRO-IDE</span>
+          <span
+            class="text-[9px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider">PRO-IDE</span>
         </div>
         <p class="text-[10px] app-text-sub">Publication-Grade Technical Writer Workspace</p>
       </div>
     </div>
-    
+
     <!-- Top Action Toolbar -->
     <div class="flex items-center space-x-2.5">
-      
+
       <!-- Undo Last Change Button (Ctrl+Z) -->
-      <button id="undo-btn" class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm opacity-40 pointer-events-none" title="Undo Last Change (Ctrl+Z)">
+      <button id="undo-btn"
+        class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm opacity-40 pointer-events-none"
+        title="Undo Last Change (Ctrl+Z)">
         <i data-lucide="undo" class="h-4.5 w-4.5 text-slate-500" id="undo-icon"></i>
       </button>
 
       <!-- Redo Last Change Button (Ctrl+Y) -->
-      <button id="redo-btn" class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm opacity-40 pointer-events-none" title="Redo Last Change (Ctrl+Y)">
+      <button id="redo-btn"
+        class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm opacity-40 pointer-events-none"
+        title="Redo Last Change (Ctrl+Y)">
         <i data-lucide="redo" class="h-4.5 w-4.5 text-slate-500" id="redo-icon"></i>
       </button>
 
       <!-- Theme Toggle Button (Left of Blueprints Dropdown) -->
-      <button id="theme-toggle-btn" class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm" title="Toggle Theme">
+      <button id="theme-toggle-btn"
+        class="flex items-center justify-center h-8 w-8 rounded-md app-input border transition-all active:scale-95 shadow-sm"
+        title="Toggle Theme">
         <i data-lucide="moon" class="h-4.5 w-4.5 text-brand-500"></i>
       </button>
 
       <!-- Fast Blueprint Selector -->
       <div class="relative">
-        <select id="header-template-selector" class="appearance-none app-input border px-3.5 py-1.5 pr-8 rounded-md text-[11px] font-medium focus:outline-none transition-all cursor-pointer">
+        <select id="header-template-selector"
+          class="appearance-none app-input border px-3.5 py-1.5 pr-8 rounded-md text-[11px] font-medium focus:outline-none transition-all cursor-pointer">
           <option value="" disabled selected>📝 Document Templates</option>
           <option value="readme">GitHub Project README.md</option>
           <option value="api">Developer API Reference.md</option>
@@ -110,12 +127,14 @@
       </div>
 
       <!-- Action Buttons -->
-      <button id="copy-markdown-btn" class="flex items-center space-x-1.5 px-3 py-1.5 app-input border text-[11px] font-medium rounded-md transition-all active:scale-95">
+      <button id="copy-markdown-btn"
+        class="flex items-center space-x-1.5 px-3 py-1.5 app-input border text-[11px] font-medium rounded-md transition-all active:scale-95">
         <i data-lucide="copy" class="h-3.5 w-3.5 text-brand-500"></i>
         <span>Copy Markdown</span>
       </button>
 
-      <button id="download-markdown-btn" class="flex items-center space-x-1.5 px-3.5 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-semibold rounded-md shadow-sm transition-all active:scale-95">
+      <button id="download-markdown-btn"
+        class="flex items-center space-x-1.5 px-3.5 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-semibold rounded-md shadow-sm transition-all active:scale-95">
         <i data-lucide="file-down" class="h-3.5 w-3.5"></i>
         <span>Export File</span>
       </button>
@@ -124,20 +143,23 @@
 
   <!-- WORKSPACE DUAL-PANE CONTAINER -->
   <main class="flex-1 flex overflow-hidden">
-    
+
     <!-- LEFT PANEL: THE VISUAL TOOLKIT & MONOSPACED EDITOR (50%) -->
     <section class="w-1/2 border-r app-sidebar flex flex-col overflow-hidden">
       <!-- Tabs Toolkit Header -->
       <div class="flex-none app-sidebar border-b px-4 pt-2 flex space-x-1.5">
-        <button id="tab-table" class="px-4 py-2 border-b-2 border-brand-500 text-brand-500 text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
+        <button id="tab-table"
+          class="px-4 py-2 border-b-2 border-brand-500 text-brand-500 text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
           <i data-lucide="grid-3x3" class="h-3.5 w-3.5"></i>
           <span>Table Generator</span>
         </button>
-        <button id="tab-latex" class="px-4 py-2 border-b-2 border-transparent app-text-sub hover:app-text-heading text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
+        <button id="tab-latex"
+          class="px-4 py-2 border-b-2 border-transparent app-text-sub hover:app-text-heading text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
           <i data-lucide="sigma" class="h-3.5 w-3.5"></i>
           <span>LaTeX Assistant</span>
         </button>
-        <button id="tab-templates" class="px-4 py-2 border-b-2 border-transparent app-text-sub hover:app-text-heading text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
+        <button id="tab-templates"
+          class="px-4 py-2 border-b-2 border-transparent app-text-sub hover:app-text-heading text-[11px] font-semibold flex items-center space-x-2 transition-all outline-none">
           <i data-lucide="dock" class="h-3.5 w-3.5"></i>
           <span>Template Skeletons</span>
         </button>
@@ -145,23 +167,30 @@
 
       <!-- Tab Input Panels -->
       <div class="flex-none app-panel p-4 border-b">
-        
+
         <!-- TOOL 1: TABLE GENERATOR -->
         <div id="panel-table" class="space-y-4">
           <div class="flex items-center justify-between">
             <div>
               <h2 class="text-[11px] font-bold app-text-main uppercase tracking-wider">Visual Table Builder</h2>
-              <p class="text-[10px] app-text-sub">Hover dimensions on the grid matrix. Click to insert markdown table structure.</p>
+              <p class="text-[10px] app-text-sub">Hover dimensions on the grid matrix. Click to insert markdown table
+                structure.</p>
             </div>
             <!-- Alignment Toggle Buttons -->
             <div class="flex app-editor-canvas rounded-lg p-0.5 border border-slate-200/50">
-              <button id="align-left" class="p-1.5 bg-brand-500/10 text-brand-500 rounded-md text-xs font-medium flex items-center transition-all" title="Left Align Columns">
+              <button id="align-left"
+                class="p-1.5 bg-brand-500/10 text-brand-500 rounded-md text-xs font-medium flex items-center transition-all"
+                title="Left Align Columns">
                 <i data-lucide="align-left" class="h-3.5 w-3.5"></i>
               </button>
-              <button id="align-center" class="p-1.5 app-text-sub hover:app-text-heading rounded-md text-xs font-medium flex items-center transition-all" title="Center Align Columns">
+              <button id="align-center"
+                class="p-1.5 app-text-sub hover:app-text-heading rounded-md text-xs font-medium flex items-center transition-all"
+                title="Center Align Columns">
                 <i data-lucide="align-center" class="h-3.5 w-3.5"></i>
               </button>
-              <button id="align-right" class="p-1.5 app-text-sub hover:app-text-heading rounded-md text-xs font-medium flex items-center transition-all" title="Right Align Columns">
+              <button id="align-right"
+                class="p-1.5 app-text-sub hover:app-text-heading rounded-md text-xs font-medium flex items-center transition-all"
+                title="Right Align Columns">
                 <i data-lucide="align-right" class="h-3.5 w-3.5"></i>
               </button>
             </div>
@@ -169,10 +198,12 @@
 
           <div class="flex items-center space-x-8">
             <!-- 10x10 Table grid -->
-            <div class="relative app-editor-canvas p-2 rounded-lg border border-slate-200/60 shadow-sm flex flex-col gap-1 w-fit" id="table-grid-container">
+            <div
+              class="relative app-editor-canvas p-2 rounded-lg border border-slate-200/60 shadow-sm flex flex-col gap-1 w-fit"
+              id="table-grid-container">
               <!-- Grid filled via javascript -->
             </div>
-            
+
             <div class="flex flex-col justify-center space-y-2">
               <div class="app-sidebar px-4 py-2.5 rounded-md border border-slate-200/50 w-32 text-center">
                 <span id="grid-dimensions" class="text-sm font-bold text-brand-500 block tracking-tight">0 x 0</span>
@@ -190,13 +221,16 @@
           <div class="flex items-center justify-between">
             <div>
               <h2 class="text-[11px] font-bold app-text-main uppercase tracking-wider">LaTeX Equation Assistant</h2>
-              <p class="text-[10px] app-text-sub">Select standard notations and symbols to populate physical formulas instantly.</p>
+              <p class="text-[10px] app-text-sub">Select standard notations and symbols to populate physical formulas
+                instantly.</p>
             </div>
             <div class="flex space-x-1.5">
-              <button id="btn-insert-inline" class="px-2.5 py-1 app-input border rounded text-[10px] font-semibold transition-all">
+              <button id="btn-insert-inline"
+                class="px-2.5 py-1 app-input border rounded text-[10px] font-semibold transition-all">
                 $ Inline Math
               </button>
-              <button id="btn-insert-block" class="px-2.5 py-1 bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 text-brand-500 rounded text-[10px] font-semibold transition-all">
+              <button id="btn-insert-block"
+                class="px-2.5 py-1 bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 text-brand-500 rounded text-[10px] font-semibold transition-all">
                 $$ Block Math
               </button>
             </div>
@@ -206,29 +240,33 @@
           <div class="grid grid-cols-12 gap-3">
             <div class="col-span-4 space-y-1">
               <label class="text-[9px] font-bold app-text-sub uppercase tracking-wider">Categories</label>
-              <select id="latex-category" class="w-full app-input border px-2 py-1.5 rounded text-xs focus:outline-none cursor-pointer">
+              <select id="latex-category"
+                class="w-full app-input border px-2 py-1.5 rounded text-xs focus:outline-none cursor-pointer">
                 <option value="basic">Arithmetic / Roots</option>
                 <option value="greek">Greek Symbols</option>
                 <option value="calculus">Calculus / Integrals</option>
                 <option value="matrices">Matrices / Tensors</option>
               </select>
             </div>
-            
+
             <div class="col-span-8 space-y-1">
               <label class="text-[9px] font-bold app-text-sub uppercase tracking-wider">Symbols Grid</label>
-              <div id="latex-symbol-grid" class="grid grid-cols-6 gap-1 app-editor-canvas p-1 rounded-md border border-slate-200/50 min-h-[38px] items-center justify-center">
+              <div id="latex-symbol-grid"
+                class="grid grid-cols-6 gap-1 app-editor-canvas p-1 rounded-md border border-slate-200/50 min-h-[38px] items-center justify-center">
                 <!-- Filled dynamically -->
               </div>
             </div>
           </div>
 
           <!-- LaTeX Playground -->
-          <div class="app-editor-canvas p-2.5 rounded border border-slate-200/60 flex items-center justify-between text-xs">
+          <div
+            class="app-editor-canvas p-2.5 rounded border border-slate-200/60 flex items-center justify-between text-xs">
             <div class="flex items-center space-x-2 truncate">
               <span class="text-[9px] uppercase font-bold app-text-sub tracking-wider">Active Formula:</span>
               <span class="text-brand-500 font-mono select-none" id="latex-sandbox-math">No active equation</span>
             </div>
-            <div id="latex-sandbox-rendered" class="text-xs app-sidebar border border-slate-200 px-2 py-1 rounded"></div>
+            <div id="latex-sandbox-rendered" class="text-xs app-sidebar border border-slate-200 px-2 py-1 rounded">
+            </div>
           </div>
         </div>
 
@@ -236,32 +274,42 @@
         <div id="panel-templates" class="hidden space-y-4">
           <div>
             <h2 class="text-[11px] font-bold app-text-main uppercase tracking-wider">Structural Template Engine</h2>
-            <p class="text-[10px] app-text-sub">Inject publishing blueprints directly. Warning: overwrites active editor text.</p>
+            <p class="text-[10px] app-text-sub">Inject publishing blueprints directly. Warning: overwrites active editor
+              text.</p>
           </div>
 
           <div class="grid grid-cols-3 gap-3">
-            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all" data-template="readme">
-              <div class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
+            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all"
+              data-template="readme">
+              <div
+                class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
               </div>
               <span class="text-xs font-bold app-text-heading group-hover:text-brand-500 block">Project README</span>
-              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">Badges, install commands, CLI syntax.</span>
+              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">Badges, install commands, CLI
+                syntax.</span>
             </button>
 
-            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all" data-template="api">
-              <div class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
+            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all"
+              data-template="api">
+              <div
+                class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
                 <i data-lucide="braces" class="h-3.5 w-3.5"></i>
               </div>
               <span class="text-xs font-bold app-text-heading group-hover:text-brand-500 block">API Reference</span>
-              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">HTTP tables, JSON responses, error structures.</span>
+              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">HTTP tables, JSON responses,
+                error structures.</span>
             </button>
 
-            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all" data-template="academic">
-              <div class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
+            <button class="template-card p-3 app-input border rounded-lg text-left group active:scale-95 transition-all"
+              data-template="academic">
+              <div
+                class="h-6 w-6 rounded bg-brand-500/5 text-brand-500 flex items-center justify-center mb-2 group-hover:bg-brand-500/10">
                 <i data-lucide="graduation-cap" class="h-3.5 w-3.5"></i>
               </div>
               <span class="text-xs font-bold app-text-heading group-hover:text-brand-500 block">Academic Report</span>
-              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">Scientific abstract, LaTeX math equations, constants tables.</span>
+              <span class="text-[9px] app-text-sub mt-0.5 line-clamp-2 leading-relaxed">Scientific abstract, LaTeX math
+                equations, constants tables.</span>
             </button>
           </div>
         </div>
@@ -270,14 +318,17 @@
 
       <!-- Raw Text Monospaced Editor -->
       <div class="flex-1 flex overflow-hidden relative app-editor-canvas">
-        
+
         <!-- Synchronized Line Numbers Gutter -->
-        <div id="editor-gutter" class="flex-none w-11 app-sidebar select-none py-4 text-right pr-2 overflow-hidden border-r border-slate-200/30">
+        <div id="editor-gutter"
+          class="flex-none w-11 app-sidebar select-none py-4 text-right pr-2 overflow-hidden border-r border-slate-200/30">
           <!-- Lines inserted via Javascript -->
         </div>
 
         <!-- The Real Monospace Textarea Editor -->
-        <textarea id="markdown-editor" class="flex-1 px-4 py-4 editor-textarea overflow-y-auto selection:bg-brand-500/10 selection:text-brand-500" placeholder="# Welcome to Backtick!
+        <textarea id="markdown-editor"
+          class="flex-1 px-4 py-4 editor-textarea overflow-y-auto selection:bg-brand-500/10 selection:text-brand-500"
+          placeholder="# Welcome to Backtick!
 
 Type markdown syntax here, select visual generators above, or load blueprints.
 
@@ -292,34 +343,43 @@ Use KaTeX math formulas anywhere! $ \sum_{i=1}^n x_i $ fits neatly inside standa
       </div>
 
       <!-- Live metrics Footer on Left Panel -->
-      <footer class="flex-none app-sidebar border-t px-4 py-2 flex items-center justify-between text-[11px] select-none">
+      <footer
+        class="flex-none app-sidebar border-t px-4 py-2 flex items-center justify-between text-[11px] select-none">
         <div class="flex items-center space-x-4">
-          <span class="flex items-center"><i data-lucide="align-justify" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Words: <span id="stat-words" class="font-semibold app-text-heading ml-0.5">0</span></span>
-          <span class="flex items-center"><i data-lucide="whole-word" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Chars: <span id="stat-chars" class="font-semibold app-text-heading ml-0.5">0</span></span>
-          <span class="flex items-center"><i data-lucide="timer" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Reading: <span id="stat-time" class="font-semibold app-text-heading ml-0.5">0 min</span></span>
-          <span class="flex items-center"><i data-lucide="calculator" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Formulas: <span id="stat-latex" class="font-semibold app-text-heading ml-0.5">0</span></span>
-          <span class="flex items-center"><i data-lucide="table-properties" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Tables: <span id="stat-tables" class="font-semibold app-text-heading ml-0.5">0</span></span>
+          <span class="flex items-center"><i data-lucide="align-justify" class="h-3.5 w-3.5 mr-1 app-text-sub"></i>
+            Words: <span id="stat-words" class="font-semibold app-text-heading ml-0.5">0</span></span>
+          <span class="flex items-center"><i data-lucide="whole-word" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Chars:
+            <span id="stat-chars" class="font-semibold app-text-heading ml-0.5">0</span></span>
+          <span class="flex items-center"><i data-lucide="timer" class="h-3.5 w-3.5 mr-1 app-text-sub"></i> Reading:
+            <span id="stat-time" class="font-semibold app-text-heading ml-0.5">0 min</span></span>
+          <span class="flex items-center"><i data-lucide="calculator" class="h-3.5 w-3.5 mr-1 app-text-sub"></i>
+            Formulas: <span id="stat-latex" class="font-semibold app-text-heading ml-0.5">0</span></span>
+          <span class="flex items-center"><i data-lucide="table-properties" class="h-3.5 w-3.5 mr-1 app-text-sub"></i>
+            Tables: <span id="stat-tables" class="font-semibold app-text-heading ml-0.5">0</span></span>
         </div>
       </footer>
     </section>
 
     <!-- RIGHT PANEL: READER & DEVELOPER FULL-HEIGHT TABS (50%) -->
     <section class="w-1/2 flex flex-col app-editor-canvas overflow-hidden border-l border-slate-200/50">
-      
+
       <!-- Split Mode Toggle Headers -->
       <div class="flex-none app-sidebar border-b h-11 px-4 flex items-center justify-between">
         <div class="flex app-editor-canvas border border-slate-200 p-0.5 rounded-lg">
-          <button id="toggle-reader" class="px-3.5 py-1.5 bg-brand-500/10 text-brand-500 text-[10.5px] font-bold uppercase tracking-wider rounded-md flex items-center space-x-1.5 transition-all outline-none">
+          <button id="toggle-reader"
+            class="px-3.5 py-1.5 bg-brand-500/10 text-brand-500 text-[10.5px] font-bold uppercase tracking-wider rounded-md flex items-center space-x-1.5 transition-all outline-none">
             <i data-lucide="book-open" class="h-3.5 w-3.5"></i>
             <span>📄 Reader Mode</span>
           </button>
-          <button id="toggle-developer" class="px-3.5 py-1.5 app-text-sub hover:app-text-heading text-[10.5px] font-bold uppercase tracking-wider rounded-md flex items-center space-x-1.5 transition-all outline-none">
+          <button id="toggle-developer"
+            class="px-3.5 py-1.5 app-text-sub hover:app-text-heading text-[10.5px] font-bold uppercase tracking-wider rounded-md flex items-center space-x-1.5 transition-all outline-none">
             <i data-lucide="code-2" class="h-3.5 w-3.5"></i>
             <span>💻 Developer Mode</span>
           </button>
         </div>
-        
-        <div class="flex items-center space-x-1.5 app-sidebar border border-slate-200 px-2.5 py-1 rounded-full text-[9px]">
+
+        <div
+          class="flex items-center space-x-1.5 app-sidebar border border-slate-200 px-2.5 py-1 rounded-full text-[9px]">
           <div class="h-1.5 w-1.5 bg-brand-500 rounded-full animate-pulse"></div>
           <span class="text-brand-500 font-bold uppercase tracking-wider">Engine Live</span>
         </div>
@@ -327,16 +387,18 @@ Use KaTeX math formulas anywhere! $ \sum_{i=1}^n x_i $ fits neatly inside standa
 
       <!-- Main Display Window -->
       <div class="flex-1 flex overflow-hidden relative">
-        
+
         <!-- DISPLAY 1: READER MODE (HTML Live Render - 100% height) -->
         <div id="pane-reader" class="flex-1 overflow-y-auto p-8 app-editor-canvas markdown-body">
           <!-- Compiled live markup output rendered here -->
         </div>
 
         <!-- DISPLAY 2: DEVELOPER MODE (Raw Code - 100% height) -->
-        <div id="pane-developer" class="hidden flex-1 overflow-auto bg-slate-900 p-6 font-mono text-[12.5px] relative border-l border-slate-200">
+        <div id="pane-developer"
+          class="hidden flex-1 overflow-auto bg-slate-900 p-6 font-mono text-[12.5px] relative border-l border-slate-200">
           <div class="absolute top-4 right-4 z-10">
-            <button id="copy-markdown-code-btn" class="flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-750 text-slate-200 hover:text-white rounded-md text-[10px] font-bold transition-all active:scale-95 animate-toast">
+            <button id="copy-markdown-code-btn"
+              class="flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-750 text-slate-200 hover:text-white rounded-md text-[10px] font-bold transition-all active:scale-95 animate-toast">
               <i data-lucide="copy" class="h-3.5 w-3.5 text-brand-500"></i>
               <span>Copy Output</span>
             </button>
@@ -348,24 +410,40 @@ Use KaTeX math formulas anywhere! $ \sum_{i=1}^n x_i $ fits neatly inside standa
 
       <!-- Integrated Community Sponsor / Ad Workspace Area inside Footer -->
       <div class="flex-none app-sidebar border-t px-6 py-2.5 flex items-center justify-between select-none">
-        <!-- Privacy Text -->
-        <span class="text-[10px] app-text-sub font-medium flex items-center">
-          <i data-lucide="lock" class="h-3 w-3 mr-1.5 text-brand-500"></i>
-          100% Local Sandbox. Data never touches external servers.
-        </span>
+        <!-- Privacy & Compliance Links -->
+        <div class="flex items-center space-x-3.5">
+          <span class="text-[10px] app-text-sub font-medium flex items-center">
+            <i data-lucide="lock" class="h-3 w-3 mr-1.5 text-brand-500"></i>
+            100% Local Sandbox.
+          </span>
+          <span class="text-slate-300 dark:text-slate-700 text-[10px] select-none">|</span>
+          <div class="flex items-center space-x-2.5 text-[10px] app-text-sub font-medium">
+            <a href="about.html" class="hover:text-brand-500 transition-colors duration-200">About Us</a>
+            <span class="opacity-35 text-[9px]">•</span>
+            <a href="privacy.html" class="hover:text-brand-500 transition-colors duration-200">Privacy Policy</a>
+            <span class="opacity-35 text-[9px]">•</span>
+            <a href="contact.html" class="hover:text-brand-500 transition-colors duration-200">Contact Us</a>
+          </div>
+        </div>
 
         <!-- Sponsor/Ad Widget (Low-profile integrated container) -->
-        <div class="flex items-center space-x-2 border border-slate-200/60 app-editor-canvas p-1 px-2.5 rounded-lg text-[9px] text-slate-400" id="sponsor-card">
-          <span class="font-bold text-brand-500 uppercase tracking-widest mr-1 text-[8px] bg-brand-500/5 px-1 py-0.5 rounded border border-brand-500/10">Ad Workspace</span>
+        <div
+          class="flex items-center space-x-2 border border-slate-200/60 app-editor-canvas p-1 px-2.5 rounded-lg text-[9px] text-slate-400"
+          id="sponsor-card">
+          <span
+            class="font-bold text-brand-500 uppercase tracking-widest mr-1 text-[8px] bg-brand-500/5 px-1 py-0.5 rounded border border-brand-500/10">Ad
+            Workspace</span>
           <span>Deploy servers on</span>
-          <a href="#" onclick="return false;" class="font-bold app-text-main hover:text-brand-500 underline transition-all">API Lightning</a>
+          <a href="#" onclick="return false;"
+            class="font-bold app-text-main hover:text-brand-500 underline transition-all">API Lightning</a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Visual Toast Notification Alert -->
-  <div id="toast-notification" class="fixed bottom-8 right-8 app-sidebar border border-brand-500/30 shadow-2xl px-4 py-3 rounded-xl text-xs font-bold flex items-center space-x-2.5 z-50 pointer-events-none opacity-0 transition-opacity duration-300 shadow-brand-500/5">
+  <div id="toast-notification"
+    class="fixed bottom-8 right-8 app-sidebar border border-brand-500/30 shadow-2xl px-4 py-3 rounded-xl text-xs font-bold flex items-center space-x-2.5 z-50 pointer-events-none opacity-0 transition-opacity duration-300 shadow-brand-500/5">
     <div class="h-6 w-6 bg-brand-500/10 text-brand-500 rounded flex items-center justify-center">
       <i data-lucide="check" class="h-3.5 w-3.5"></i>
     </div>
@@ -374,7 +452,7 @@ Use KaTeX math formulas anywhere! $ \sum_{i=1}^n x_i $ fits neatly inside standa
 
   <!-- Marked Markdown Parser CDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
+
   <!-- KaTeX Script CDN -->
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
 
@@ -403,4 +481,5 @@ Use KaTeX math formulas anywhere! $ \sum_{i=1}^n x_i $ fits neatly inside standa
   <!-- Core Redesigned JS controllers -->
   <script src="app.js"></script>
 </body>
+
 </html>

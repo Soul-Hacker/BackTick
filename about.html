@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Backtick IDE</title>
+  <meta name="description" content="Learn more about Backtick IDE, our mission to simplify technical markdown writing, and our commitment to absolute client-side privacy.">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Config mapping theme parameters dynamically -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#059669',
+              600: '#047857',
+              700: '#065f46',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Dynamic Theme Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="h-full flex flex-col antialiased">
+
+  <!-- Minimalist Clean Header -->
+  <header class="flex-none h-14 border-b app-header px-6 flex items-center justify-between z-20">
+    <div class="flex items-center space-x-3">
+      <div class="h-8 w-8 rounded-lg bg-brand-500/10 flex items-center justify-center border border-brand-500/20">
+        <i data-lucide="feather" class="text-brand-500 h-4.5 w-4.5"></i>
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm font-bold tracking-tight app-text-heading">Backtick</span>
+          <span class="text-[9px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider">PRO-IDE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <a href="index.html" class="flex items-center space-x-1 px-3 py-1.5 app-input border text-[11px] font-semibold rounded-md transition-all active:scale-95 shadow-sm">
+        <i data-lucide="arrow-left" class="h-3.5 w-3.5 text-brand-500"></i>
+        <span>Back to Editor</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="flex-1 overflow-y-auto py-12 px-6">
+    <div class="max-w-2xl mx-auto glass-card rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200/50">
+      
+      <!-- Page Title -->
+      <div class="border-b border-slate-200/50 dark:border-slate-800 pb-6 mb-8 text-center md:text-left">
+        <span class="text-[10px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-2.5 py-1 rounded-full font-bold uppercase tracking-widest">Our Identity</span>
+        <h1 class="text-3xl font-extrabold tracking-tight app-text-heading mt-3">About Backtick</h1>
+        <p class="text-xs app-text-sub mt-2 leading-relaxed">Publication-Grade Technical Writer Workspace & Scientific Sandbox</p>
+      </div>
+
+      <!-- Article Prose -->
+      <article class="markdown-body space-y-6">
+        <p class="lead text-base font-medium leading-relaxed app-text-main">
+          Backtick is a publishing-grade, 100% client-side Markdown IDE designed specifically for technical writers, software engineers, data scientists, and researchers who require visual, fluid, and scientific writing interfaces.
+        </p>
+
+        <h3 class="text-lg font-bold app-text-heading mt-6 flex items-center">
+          <i data-lucide="compass" class="h-4.5 w-4.5 mr-2 text-brand-500"></i> Our Mission
+        </h3>
+        <p class="leading-relaxed">
+          Technical documentation is often painful to write. Writers are constantly forced to switch focus between raw text editing, slow LaTeX compilation, manual table syntax alignment, and server-side preview latency. Backtick was built to eliminate this friction by providing a real-time, browser-native sandbox environment. 
+        </p>
+        <p class="leading-relaxed">
+          By combining dynamic visual builders, real-time LaTeX previews, structural Obsidian-style templates, and advanced text statistics inside a unified interface, we empower creators to build structured and beautiful content effortlessly.
+        </p>
+
+        <h3 class="text-lg font-bold app-text-heading mt-6 flex items-center">
+          <i data-lucide="shield-check" class="h-4.5 w-4.5 mr-2 text-brand-500"></i> Absolute Local Privacy
+        </h3>
+        <p class="leading-relaxed">
+          In an era where personal data and proprietary code are constantly processed by external cloud servers, Backtick stands firmly for user data security. Our application runs <strong>100% locally in your web browser</strong>. No databases, no telemetry, and no remote document uploads. Your blueprints, code document drafts, and scientific abstracts never leave your local workspace.
+        </p>
+
+        <h3 class="text-lg font-bold app-text-heading mt-6 flex items-center">
+          <i data-lucide="cpu" class="h-4.5 w-4.5 mr-2 text-brand-500"></i> Niche Technical Coverage
+        </h3>
+        <p class="leading-relaxed">
+          We cater specifically to scientific writing and technical software documentation. Backtick integrates:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Visual Table Generator:</strong> Generate stripe-designed, perfectly aligned Markdown data grids visually via a hover-coordinate matrix.</li>
+          <li><strong>LaTeX Scientific Engine:</strong> Render calculus, Greek notation, and advanced physics matrices instantly using browser-optimized KaTeX compiling.</li>
+          <li><strong>Dynamic Templates:</strong> Deploy pre-formatted blueprints for standard GitHub READMEs, developer API gateways, or academic papers in a single click.</li>
+        </ul>
+      </article>
+
+      <!-- Footer Info -->
+      <div class="border-t border-slate-200/50 dark:border-slate-800 pt-8 mt-10 text-center">
+        <p class="text-[10px] app-text-sub">© 2026 Backtick IDE. All rights reserved. Open-source local sandbox platform.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Theme sync script
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+    }
+    // Render Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

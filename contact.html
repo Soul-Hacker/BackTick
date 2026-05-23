@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Backtick IDE</title>
+  <meta name="description" content="Reach out to the Backtick IDE support team. Send queries, feature proposals, or feedback through our contact workspace.">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Config mapping theme parameters dynamically -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#059669',
+              600: '#047857',
+              700: '#065f46',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Dynamic Theme Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="h-full flex flex-col antialiased">
+
+  <!-- Minimalist Clean Header -->
+  <header class="flex-none h-14 border-b app-header px-6 flex items-center justify-between z-20">
+    <div class="flex items-center space-x-3">
+      <div class="h-8 w-8 rounded-lg bg-brand-500/10 flex items-center justify-center border border-brand-500/20">
+        <i data-lucide="feather" class="text-brand-500 h-4.5 w-4.5"></i>
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm font-bold tracking-tight app-text-heading">Backtick</span>
+          <span class="text-[9px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider">PRO-IDE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <a href="index.html" class="flex items-center space-x-1 px-3 py-1.5 app-input border text-[11px] font-semibold rounded-md transition-all active:scale-95 shadow-sm">
+        <i data-lucide="arrow-left" class="h-3.5 w-3.5 text-brand-500"></i>
+        <span>Back to Editor</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="flex-1 overflow-y-auto py-12 px-6">
+    <div class="max-w-xl mx-auto glass-card rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200/50">
+      
+      <!-- Page Title -->
+      <div class="border-b border-slate-200/50 dark:border-slate-800 pb-6 mb-8 text-center md:text-left">
+        <span class="text-[10px] bg-brand-500/10 text-brand-500 border border-brand-500/20 px-2.5 py-1 rounded-full font-bold uppercase tracking-widest">Connect With Us</span>
+        <h1 class="text-3xl font-extrabold tracking-tight app-text-heading mt-3">Contact Us</h1>
+        <p class="text-xs app-text-sub mt-2 leading-relaxed">Have a question or custom feature request? Drop us a line below.</p>
+      </div>
+
+      <!-- Functional Form with dynamic JS submit states -->
+      <form id="contact-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+        
+        <div class="space-y-1.5">
+          <label for="contact-name" class="text-[10px] font-bold app-text-sub uppercase tracking-wider">Full Name</label>
+          <input type="text" id="contact-name" required placeholder="Dr. Elias Vance"
+            class="w-full px-4 py-2.5 app-input border rounded-lg text-xs font-medium focus:outline-none transition-all duration-200">
+        </div>
+
+        <div class="space-y-1.5">
+          <label for="contact-email" class="text-[10px] font-bold app-text-sub uppercase tracking-wider">Email Address</label>
+          <input type="email" id="contact-email" required placeholder="supportbacktick@gmail.com"
+            class="w-full px-4 py-2.5 app-input border rounded-lg text-xs font-medium focus:outline-none transition-all duration-200">
+        </div>
+
+        <div class="space-y-1.5">
+          <label for="contact-subject" class="text-[10px] font-bold app-text-sub uppercase tracking-wider">Subject</label>
+          <select id="contact-subject" required
+            class="w-full px-4 py-2.5 app-input border rounded-lg text-xs font-medium focus:outline-none transition-all duration-200 cursor-pointer">
+            <option value="General Support">General Support Request</option>
+            <option value="Feature Suggestion">Feature Suggestion or Custom Math blueprints</option>
+            <option value="API Partnerships">API Partnership & Ad Workspaces</option>
+            <option value="Bug Report">Bug Reports</option>
+          </select>
+        </div>
+
+        <div class="space-y-1.5">
+          <label for="contact-message" class="text-[10px] font-bold app-text-sub uppercase tracking-wider">Your Message</label>
+          <textarea id="contact-message" required rows="4" placeholder="Type your query or document feedback here..."
+            class="w-full px-4 py-3 app-input border rounded-lg text-xs font-medium focus:outline-none transition-all duration-200 resize-none leading-relaxed"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn"
+          class="w-full flex items-center justify-center space-x-2 py-3 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-lg shadow-md transition-all duration-200 active:scale-[0.98]">
+          <i data-lucide="send" class="h-3.5 w-3.5"></i>
+          <span>Send Message</span>
+        </button>
+
+      </form>
+
+      <!-- Beautiful Success Card (Hidden by default) -->
+      <div id="success-card" class="hidden text-center py-6 animate-toast space-y-4">
+        <div class="h-16 w-16 mx-auto bg-brand-500/10 text-brand-500 border border-brand-500/20 rounded-full flex items-center justify-center">
+          <i data-lucide="mail-check" class="h-8 w-8"></i>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold app-text-heading">Message Sent Successfully!</h2>
+          <p class="text-xs app-text-sub mt-1 leading-relaxed">Thank you for reaching out. We have logged your request and our technical support workspace will review it within 24 hours.</p>
+        </div>
+        <button onclick="resetContactForm()" 
+          class="px-4 py-2 app-input border text-xs font-semibold rounded-lg shadow-sm transition-all active:scale-95">
+          Send another message
+        </button>
+      </div>
+
+      <!-- General Contact Coordinates -->
+      <div class="border-t border-slate-200/50 dark:border-slate-800 pt-8 mt-8 space-y-3">
+        <h4 class="text-[10px] font-bold app-text-sub uppercase tracking-widest text-center">Alternative Contacts</h4>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs">
+          <a href="mailto:supportbacktick@gmail.com" class="flex items-center text-brand-500 hover:underline">
+            <i data-lucide="mail" class="h-3.5 w-3.5 mr-1.5"></i>
+            <span>supportbacktick@gmail.com</span>
+          </a>
+          <span class="hidden md:inline opacity-30">•</span>
+          <span class="flex items-center app-text-main">
+            <i data-lucide="map-pin" class="h-3.5 w-3.5 mr-1.5 text-brand-500"></i>
+            <span>Mumbai, India</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="border-t border-slate-200/50 dark:border-slate-800 pt-8 mt-8 text-center">
+        <p class="text-[10px] app-text-sub">© 2026 Backtick IDE. All rights reserved. Open-source local sandbox platform.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Theme sync script
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+    }
+    // Render Lucide icons
+    lucide.createIcons();
+
+    // Form Handling Functions
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('contact-form');
+      const successCard = document.getElementById('success-card');
+      const submitBtn = document.getElementById('submit-btn');
+
+      // Add elegant loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <div class="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+        <span>Sending...</span>
+      `;
+
+      // Simulate a small network delay for premium feel
+      setTimeout(() => {
+        form.classList.add('hidden');
+        successCard.classList.remove('hidden');
+        
+        // Reset submit button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <i data-lucide="send" class="h-3.5 w-3.5"></i>
+          <span>Send Message</span>
+        `;
+        lucide.createIcons();
+      }, 1000);
+    }
+
+    function resetContactForm() {
+      const form = document.getElementById('contact-form');
+      const successCard = document.getElementById('success-card');
+      
+      form.reset();
+      successCard.classList.add('hidden');
+      form.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
