@@ -471,14 +471,14 @@ function parseMarkdownAndLaTeX(markdownText) {
 
   // Replace block math $$ math $$
   text = text.replace(/\$\$([\s\S]*?)\$\$/g, (match, mathContent) => {
-    const placeholder = `___KATEX_BLOCK_PLACEHOLDER_${blocks.length}___`;
+    const placeholder = `::katex-block-placeholder-${blocks.length}::`;
     blocks.push({ placeholder, math: mathContent.trim() });
     return placeholder;
   });
 
   // Replace inline math $ math $
   text = text.replace(/\$([^$\n]+?)\$/g, (match, mathContent) => {
-    const placeholder = `___KATEX_INLINE_PLACEHOLDER_${inlines.length}___`;
+    const placeholder = `::katex-inline-placeholder-${inlines.length}::`;
     inlines.push({ placeholder, math: mathContent.trim() });
     return placeholder;
   });
@@ -490,7 +490,7 @@ function parseMarkdownAndLaTeX(markdownText) {
   blocks.forEach(item => {
     html = html.replace(
       item.placeholder, 
-      `<div class="katex-placeholder-block" data-math="${escapeAttribute(item.math)}"></div>`
+      () => `<div class="katex-placeholder-block" data-math="${escapeAttribute(item.math)}"></div>`
     );
   });
 
@@ -498,7 +498,7 @@ function parseMarkdownAndLaTeX(markdownText) {
   inlines.forEach(item => {
     html = html.replace(
       item.placeholder, 
-      `<span class="katex-placeholder-inline" data-math="${escapeAttribute(item.math)}"></span>`
+      () => `<span class="katex-placeholder-inline" data-math="${escapeAttribute(item.math)}"></span>`
     );
   });
 
